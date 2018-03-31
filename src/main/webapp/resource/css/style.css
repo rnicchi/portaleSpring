@@ -1,0 +1,397 @@
+
+/******************************************
+Menu 2 column in % + header + footer fix.**
+Notice: header, footer, fix dimension; *******
+menus in % & indipendents ****************
+content contain iframe, indipendent ********
+******** Version 2.1 **********************
+******************************************
+******************* Credit's . **************
+****Stylesheet powered by Angelo Blua *****
+******* angeloblua@hotmail.com **********
+for problem or question, contact me. ********
+Don 't remove this, thanks ;-)
+*******************************************
+***************--- begin ---***************/
+
+* {
+margin : 0;
+padding : 0;
+border : 0;
+text-align : center;
+}
+
+
+/* QUI SOTTO I COMANDI PER IL COLORE ED ALTRO DEL BODY  */
+html, body {
+overflow-y : Auto;
+font : normal normal 700 76%/180% georgia, verdana, geneva, arial, helvetica, sans-serif;
+color : #0a0a0a;
+background-color : #ffffff;
+}
+
+.table tr td{
+
+font-size: 80%;
+
+}
+
+#container {
+top : 0;
+left : 0;
+right : 0;
+bottom : 0;
+z-index : 0;
+border : 1px ridge #0a0a0a;
+}
+
+html > body #container {
+position : fixed;
+}
+
+* html #container {
+position : absolute;
+height : 100%;
+}
+
+#box {
+z-index : 1;
+}
+
+* html #box {
+position : static;
+height : 100%;
+padding : 30px 0 30px 0;
+}
+html > body #box {
+overflow-y : Auto;
+position : absolute;
+top : 70px;
+right : 0;
+bottom : 30px;
+left : 0;
+}
+
+#second_box {
+height : 100%;
+position : relative;
+top : 0;
+right : 0;
+bottom : 0;
+left : 0;
+}
+html > body #second_box {
+position : absolute;
+height : auto;
+}
+
+#content_ifra {
+height : 100%;
+border-left : 1px solid gray;
+border-right : 1px solid gray;
+}
+
+* html #content_ifra {
+margin-right : 200px;
+margin-left : 200px;
+position : static;
+padding : 2% 0 0 0;
+}
+
+html > body #content_ifra {
+position : absolute;
+top : 0;
+bottom : 0;
+right : 200px;
+left : 200px;
+}
+
+#ifra {
+width : 99.999%;
+margin : auto;
+height : 95.999%;
+}
+
+html > body #ifra {
+position : absolute;
+top : 2%;
+right : 0;
+bottom : 2%;
+left : 0;
+}
+
+#left {
+width : 200px;
+position : absolute;
+top : 0;
+bottom : 0;
+left : 0;
+overflow : auto;
+z-index : 2;
+height : 100%;
+}
+
+#menu_left {
+margin : 3% auto auto auto;
+width : 90%;
+height : 96.999%;
+background-color : #ffffff;
+color : #f5f5f5;
+font-size : 140%;
+}
+
+* html #menu_left ul li a {
+width : 99%;
+}
+
+#header {
+position : absolute;
+top : 0;
+right : 0;
+left : 0;
+height : 32.5px;
+border-bottom : 1px solid gray;
+font-size : 150%;
+z-index : 4;
+color : #ffffff;
+background-color :#162F74;
+bottom : -1px;
+}
+
+#footer {
+position : absolute;
+bottom : -1px;
+right : 0;
+left : 0;
+height : 30px;
+border-top : 1px solid gray;
+font-size : 120%;
+z-index : 4;
+color : #CCC;
+/*background-color :#162F74;*/
+background-color: #036;
+}
+
+html > body #footer {
+height : 30px;
+}
+
+* html #header, * html #footer {
+width : 100%;
+}
+
+* html #footer img {
+vertical-align : text-bottom;
+}
+
+a {
+text-decoration : none;
+background-color : #162F74;
+color : #f5f5f5;
+}
+
+ul, li {
+list-style-type : none;
+}
+
+li {
+height : 30px;
+line-height : 30px;
+text-align : left;
+}
+
+/* QUI SOTTO I COMANDI PER I COLORI ED ALTRE IMPOSTAZIONI DEL MENU LATERALE */
+
+ul li a, ul li a:link, ul li a:visited {
+display : block;
+color : #fff;
+background-color : #036; 
+border : 1px solid #fff;
+text-align : left;
+padding-left : 20px;
+
+}
+
+/* QUI SOTTO I COMANDI PER I COLORI ED ALTRE IMPOSTAZIONI DEL MENU LATERALE una volta cliccato un bottone*/
+
+ul li a:hover, ul li a:active, ul li a:focus {
+color : #fff;
+background-color : #369;
+border : 1px solid #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+line-height : 120%;
+}
+
+h1 {
+font-size : 200%;
+}
+
+h2 {
+font-size : 150%;
+}
+
+h3 {
+font-size : 100%;
+font-style: italic;
+line-height : 100%;
+}
+
+h4 {
+font-size : 100%;
+}
+
+p {
+margin : 10px 0 0 0;
+}
+
+img.w3c {
+height : 31px;
+width : 88px;
+}
+
+#slide {
+	
+	padding-left: 250;
+	
+}
+
+#nav {
+    background-color: #036;
+    height : 32.5px;
+}
+#nav_wrapper {
+    width: 1500px;
+    height: 32.5px;
+    margin: 0 auto;
+    text-align: left;
+    
+}
+
+/* questo è lo sfondo dietro al menu */
+#nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    min-width: 15.5px;
+    
+}
+#nav ul li {
+    display: inline-block;
+    height : 32.5px;
+}
+#nav ul li:hover {
+    background-color: #333;
+}
+#nav ul li a, visited {
+    color: #CCC;
+    display: block;
+    text-decoration: none;
+    font-size : 100%;
+    padding: 0;
+    margin: 0;
+    border-color: #036;
+    
+}
+#nav ul li:hover ul {
+    display: block;
+}
+#nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    border: 5px solid #222;
+    border-top: 0;
+    margin-left: -5px;
+}
+#nav ul ul li {
+    display: table-row-group;
+    width: 200px;
+    
+}
+#nav ul ul li a:hover {
+    color: #699;
+}
+
+/*============================*/
+/*=== Stili per lo slider ===*/
+/*============================*/
+
+header, section, footer,
+aside, nav, article, figure {
+	display: block;
+}
+
+
+#slider {
+	border: 2px solid #333;
+	/* il Div deve essere della stessa grandezza delle immagini se no viene male*/
+    width: 850px; 
+    height: 369px;
+    margin:40px auto;
+	background:url(../images/loading.gif) no-repeat 50% 50%;
+}
+#slider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+}
+#slider a {
+	border:0;
+	display:block;
+}
+
+.nivo-controlNav {
+	position:absolute;
+	left:360px;
+	bottom:-42px;
+}
+.nivo-controlNav a {
+	display:block;
+	width:22px;
+	height:22px;
+	background:url(../images/bullets.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	margin-right:10px;
+	float:left;
+}
+.nivo-controlNav a.active {
+	background-position:0 -22px;
+}
+
+.nivo-directionNav a {
+	display:block;
+	width:30px;
+	height:30px;
+	background:url(../images/arrows.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	/* margin-left:390px;
+	float:right; */
+	
+	
+	
+}
+a.nivo-nextNav {
+	
+	background-position:-30px 0;
+	right:15px;
+}
+a.nivo-prevNav {
+	
+	left:15px;
+}
+
+.nivo-caption {
+    text-shadow:none;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.nivo-caption a { 
+    color:#efe9d1;
+    text-decoration:underline;
+}
+

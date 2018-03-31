@@ -1,0 +1,41 @@
+<beans:beans
+    xmlns="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/security 
+http://www.springframework.org/schema/security/spring-security.xsd">
+
+<http auto-config="true">  
+        <!--we intercept request and make sure that login users with specific role can only access the pages-->  
+        <intercept-url pattern="/home" access="ROLE_USER,ROLE_ADMIN"></intercept-url>
+     <!--     <intercept-url pattern="/admin" access="permitAll"></intercept-url> -->
+        <intercept-url pattern="/admin" access="ROLE_ADMIN,ROLE_USER_R_W"></intercept-url> 
+        <intercept-url pattern="/listUsers" access="ROLE_ADMIN"></intercept-url>
+        <intercept-url pattern="/listRoles" access="ROLE_ADMIN"></intercept-url>
+        <intercept-url pattern="/listPermissions" access="ROLE_ADMIN"></intercept-url>
+        <intercept-url pattern="/listMenuElements" access="ROLE_ADMIN"></intercept-url> 
+        <intercept-url pattern="/listMenuUserElements" access="ROLE_ADMIN"></intercept-url>
+        
+         
+  
+        <form-login login-page="/login" default-target-url="/index" authentication-failure-url="/failLogin"></form-login>  
+        <logout invalidate-session="true" logout-success-url="/"></logout>  
+    </http>     
+    
+    <authentication-manager>  
+        <authentication-provider>
+        <jdbc-user-service data-source-ref="dataSource" users-by-username-query="select username, password, enabled from user where username=?"
+       authorities-by-username-query="select u.username, r.role_name from user u, roles r, rel_user_roles ur where u.login_id=ur.login_id and r.role_id=ur.role_id and u.username=?"/>     
+       <!--authorities-by-username-query="select u.username, r.role from user u, roles r where u.login_id = r.role_id and u.username=?"/>  
+            <password-encoder ref="encoder"></password-encoder>  -->  
+        </authentication-provider>  
+    </authentication-manager>  
+
+
+
+</beans:beans>
+
+    
